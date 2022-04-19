@@ -6,8 +6,8 @@ const server = http.createServer((req, res) => {
   res.end()
 })
 
-server.on('connection', (socket) => {
-  console.log(`client connected from ${socket.remoteAddress}`)
-})
+// server.on('connection', (socket) => {
+//   console.log(`client connected from ${socket.remoteAddress}`)
+// })
 const PORT = 9000
 server.listen(PORT, () => console.log(`Server running on: ${PORT}`))
