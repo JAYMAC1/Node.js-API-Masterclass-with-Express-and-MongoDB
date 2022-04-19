@@ -1,9 +1,18 @@
 const http = require('http')
 
+const todos = [
+  { id: 1, text: 'Wash car' },
+  { id: 2, text: 'Sell car' },
+  { id: 3, text: 'Book Holiday' },
+]
+
 const server = http.createServer((req, res) => {
-  const { headers, method, url } = req
-  console.log(headers, method, url)
-  res.end()
+  res.setHeader('Content-Type', 'application/json')
+  res.setHeader('X-Powered-By', 'Node.js')
+  res.end({
+    success: true,
+    data: todos,
+  })
 })
 
 // server.on('connection', (socket) => {
