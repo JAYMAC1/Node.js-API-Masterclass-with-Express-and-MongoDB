@@ -1,9 +1,8 @@
 const express = require('express') // import express
 const router = express.Router() // initalise router
+const { getBootcamps } = require('../controllers/bootcamps')
 
-router.get('/', (req, res) => {
-  res.status(200).json({ success: true, msg: 'Show all bootcamps' })
-})
+router.get('/', getBootcamps)
 
 router.get('/:id', (req, res) => {
   res.status(200).json({ success: true, msg: `Get bootcamp ${req.params.id}` })
