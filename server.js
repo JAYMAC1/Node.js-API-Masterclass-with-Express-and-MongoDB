@@ -8,6 +8,9 @@ const app = express() // create instance of express 'app'
 app.get('/api/v1/bootcamps', (req, res) => {
   res.status(200).json({ success: true, msg: 'Show all bootcamps' })
 })
+app.get('/api/v1/bootcamps/:id', (req, res) => {
+  res.status(200).json({ success: true, msg: `Get bootcamp ${req.params.id}` })
+})
 app.post('/api/v1/bootcamps', (req, res) => {
   res.status(200).json({ success: true, msg: 'Create new bootcamps' })
 })
