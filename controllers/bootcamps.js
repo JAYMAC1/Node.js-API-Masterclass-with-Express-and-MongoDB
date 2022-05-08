@@ -2,7 +2,9 @@
 // @route   GET /api/v1/bootcamps
 // @access  Public
 const listBootcamps = (req, res) => {
-  res.status(200).json({ success: true, msg: 'Show all bootcamps' })
+  res
+    .status(200)
+    .json({ success: true, msg: 'List all bootcamps', hello: req.hello })
 }
 
 // @desc    Fetch single bootcamp
