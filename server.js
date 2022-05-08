@@ -5,6 +5,13 @@ const PORT = process.env.PORT || 5000 // Get port from .env
 
 const app = express() // create instance of express 'app'
 
+const logger = (req, res, next) => {
+  req.hello = 'Hello World'
+  console.log('Middleware ran')
+  next()
+}
+
+app.use(logger)
 app.use('/api/v1/bootcamps', bootcamps) // mount bootcamp router
 
 app.listen(
