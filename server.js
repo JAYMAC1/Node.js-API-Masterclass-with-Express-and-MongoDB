@@ -1,6 +1,6 @@
 const express = require('express') // import express
 const dotenv = require('dotenv').config({ path: './config/config.env' }) // import and ref .env config file (environmental variables)
-const { logger } = require('./middleware/logger')
+const logger = require('./middleware/logger')
 const bootcamps = require('./routes/bootcamps') // import bootcamp routers file
 const PORT = process.env.PORT || 5000 // Get port from .env
 
